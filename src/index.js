@@ -17,10 +17,12 @@
 
 module.exports = function towelSort(matrix) {
     let array = [];
-    for (i = 0; i < matrix.length; i++) {
-        i % 2 === 0
-            ? array.push(matrix[i])
-            : array.push(matrix[i].sort((a, b) => b - a));
+    if (matrix) {
+        for (i = 0; i < matrix.length; i++) {
+            i % 2 === 0
+                ? array.push(matrix[i])
+                : array.push(matrix[i].sort((a, b) => b - a));
+        }
     }
     return array.flat();
 };
